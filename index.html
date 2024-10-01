@@ -1,13 +1,196 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  
+  <meta name="title" content="Weather App Project">
+  <meta name="description" content="This is a weather app, for the odin project, made by cgathua">
+</head>
+
+<body>
+  <main>
+    <header>
+      <a 
+        href="#home" 
+        class="logo" 
+        aria-label="home" 
+        alt="weather forecast rain">
+        <svg 
+          aria-label="weather icon" 
+          fill="currentColor" 
+          height="36px" 
+          width="36px" 
+          version="1.1" 
+          id="Icons"
+          xmlns="http://www.w3.org/2000/svg" 
+          xmlns:xlink="http://www.w3.org/1999/xlink" 
+          viewBox="0 0 32 32"
+          xml:space="preserve">
+          <g 
+            id="SVGRepo_bgCarrier" 
+            stroke-width="0">
+          </g>
+          <g 
+            id="SVGRepo_tracerCarrier" 
+            stroke-linecap="round" 
+            stroke-linejoin="round">
+          </g>
+          <g 
+            id="SVGRepo_iconCarrier">
+            <path
+              d="M16,2C9.9,2,5,6.8,5,12.8c0,9.1,10,16.7,10.4,17c0.2,0.1,0.4,0.2,0.6,0.2s0.4-0.1,0.6-0.2c0.4-0.3,10.4-8,10.4-17 C27,6.8,22.1,2,16,2z M22,13.9h-5v4.9c0,1.2-1,2.2-2.1,2.2s-2.1-1-2.1-2.2c0-0.6,0.4-1,1-1s1,0.4,1,1c0,0.2,0.3,0.2,0.3,0v-4.9h-5 c-0.6,0-1-0.4-1-1c0-3.9,3.1-7,7-7s7,3.1,7,7C23,13.5,22.5,13.9,22,13.9z">
+            </path>
+          </g>
+        </svg>
+        <h1>Weather</h1>
+      </a>
+
+      <form>
+        <input 
+          type="text" 
+          required="valid location" 
+        />
+        <button 
+          type="submit" 
+          id="submit" 
+          aria-label="submit button">
+          <svg 
+            aria-label="search icon" 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="18" 
+            height="18" 
+            viewBox="0 0 24 24"
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+            class="feather feather-search">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </form>
+
+    </header>
+    
+    <section id="info">
+      <article>
+
+        <figure class="desc">
+          <img 
+            src="" 
+            data-name="icon"
+          >
+          <figcaption data-name="description"><figcaption>
+        </figure>
+
+        <figure class="data">
+          <dl>
+            <dt data-name="feelslike"></dt>
+            <dd>feels like</dd>
+          </dl>
+
+          <dl>
+            <dt data-name="humidity"></dt>
+            <dd>humidity</dd>
+          </dl>
+
+          <dl>
+            <dt data-name="cloudcover"></dt>
+            <dd>cloud cover</dd>
+          </dl>
+
+          <dl>
+            <dt data-name="datetime"></dt>
+            <dd>time</dd>
+          </dl>
+
+          <dl>
+            <dt data-name="sunrise"></dt>
+            <dd>sunrise</dd>
+          </dl>
+
+          <dl>
+            <dt data-name="sunset"></dt>
+            <dd>sunset</dd>
+          </dl>
+        </figure>
+
+      </article>
+
+      <aside>
+        <h2 data-name="resolved"></h2>
+      </aside>
+
+    </section>
+    
+    <section id="schedule">
+
+      <figure>
+        <img 
+          src="" 
+          data-name="dayzeroicon" 
+          width="24px"
+        >
+        <figcaption data-name="dayzeroconditions" class="conditions"></figcaption>
+        <p data-name="dayzerodescription"></p>
+        <dl class="forecast">
+          <dt data-name="dayzero"></dt>
+          <dd>today</dd>
+          <dt data-name="dayzeromax"></dt>
+          <dd>max temp</dd>
+          <dt data-name="dayzeromin"></dt>
+          <dd>min temp</dd>
+        </dl>
+      </figure>
+
+      <figure>
+        <img 
+          src="" 
+          data-name="dayoneicon" 
+          width="24px"
+        >
+        <figcaption data-name="dayoneconditions" class="conditions"></figcaption>
+        <p data-name="dayonedescription"></p>
+        <dl class="forecast">
+          <dt data-name="dayone"></dt>
+          <dd>tomorrow</dd>
+          <dt data-name="dayonemax"></dt>
+          <dd>max temp</dd>
+          <dt data-name="dayonemin"></dt>
+          <dd>min temp</dd>
+        </dl>
+      </figure>
+
+      <figure>
+        <img 
+          src="" 
+          data-name="daytwoicon" 
+          width="24px"
+        >
+        <figcaption data-name="daytwoconditions" class="conditions"></figcaption>
+        <p data-name="daytwodescription"></p>
+        <dl class="forecast">
+          <dt data-name="daytwo"></dt>
+          <dd>day after tomorrow</dd>
+          <dt data-name="daytwomax"></dt>
+          <dd>max temp</dd>
+          <dt data-name="daytwomin"></dt>
+          <dd>min temp</dd>
+        </dl>
+      </figure>
+      
+    </section>
+
+  </main>
+  <!--vite-->
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
