@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #334F57;
+  --secondary-color: #EDEBEB;
+  --alternate-color: #000000;
+  --transition: all 0.3s ease;
+  --container: 90%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+html,
+body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-weight: normal;
+  min-height: 100vh;
+  line-height: 1.75;
+
+}
+
+img {
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+a {
+  color: var(--secondary-color);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--tertiary-color);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: lighter;
+}
+
+h1,
+h2,
+p,
+dl,
+dd,
+dt,
+figcaption {
+  color: var(--secondary-color);
+}
+
+main {
+  width: var(--container);
+  margin: 0 auto;
+}
+
+section {
+  padding-top: 3rem;
+}
+
+/* end of general styling */
