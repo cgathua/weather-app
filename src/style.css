@@ -32,7 +32,15 @@ body {
   font-weight: normal;
   min-height: 100vh;
   line-height: 1.75;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-color: var(--alternate-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./pexels-pixabay-459451.jpg');
 
+  @supports (background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./pexels-pixabay-459451.webp')) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./pexels-pixabay-459451.webp');
+  }
 }
 
 img {
