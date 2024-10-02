@@ -44,6 +44,7 @@ body {
 }
 
 img {
+  width: 3.5rem;
   height: auto;
   object-fit: cover;
   display: block;
@@ -216,3 +217,21 @@ dl[class="forecast"] dt {
 }
 
 /* end of schedule section */
+@media screen and (max-width: 720px) {
+  figure[class="data"] {
+    grid-template-columns: minmax(min-content, 1fr);
+  }
+
+}
+
+@media screen and (min-width: 720px) {
+  figure[class="data"] {
+    grid-template-columns: repeat(2, minmax(min-content, 1fr));
+  }
+}
+
+@media screen and (min-width: 820px) {
+  figure[class="data"] {
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  }
+}
