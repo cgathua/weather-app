@@ -34,10 +34,12 @@ const dayTwoDescription = document.querySelector('[data-name="daytwodescription"
 const dayTwoMax = document.querySelector('[data-name="daytwomax"]') as HTMLDataElement;
 const dayTwoMin = document.querySelector('[data-name="daytwomin"]') as HTMLDataElement;
 
-
+const loadingScreen = document.querySelector('[data-name="spinner"]') as HTMLDivElement;
 
 const API_KEY: string = 'AYNDWPDRMYWBLPWRNX7XZQW79'
 async function searchAPI(): Promise<void> {
+  loadingScreen.classList.remove('hidden');
+  form.disabled = true;
   try {
     const location: string = userInput.value.trim() || 'atlanta';
     const response: Response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${API_KEY}`, { mode: 'cors' });
@@ -82,6 +84,9 @@ async function searchAPI(): Promise<void> {
     }
   } catch (error) {
     console.log(error);
+  } finally {
+    form.disabled = false;
+    loadingScreen.classList.add('hidden');
   }
 
 }
