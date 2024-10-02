@@ -95,6 +95,7 @@ header {
   right: 0;
   width: 100%;
   gap: 1rem;
+  z-index: 3;
 }
 
 .logo {
