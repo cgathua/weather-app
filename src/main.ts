@@ -58,23 +58,23 @@ async function searchAPI(): Promise<void> {
       sunset.textContent = json.currentConditions.sunset;
       resolvedAddress.textContent = json.resolvedAddress;
       description.textContent = json.description;
-      iconDisplay.src = `src/icons/${json.currentConditions.icon}.svg`;
+      iconDisplay.src = `icons/${json.currentConditions.icon}.svg`;
 
-      dayZeroIcon.src = `src/icons/${json.days[0].icon}.svg`;
+      dayZeroIcon.src = `icons/${json.days[0].icon}.svg`;
       dayZeroConditions.textContent = json.days[0].conditions;
       dayZeroDescription.textContent = json.days[0].description;
       dayZero.textContent = json.days[0].datetime;
       dayZeroMax.textContent = `${Math.round(json.days[0].feelslikemax)}° F`;
       dayZeroMin.textContent = `${Math.round(json.days[0].feelslikemin)}° F`;
 
-      dayOneIcon.src = `src/icons/${json.days[1].icon}.svg`;
+      dayOneIcon.src = `icons/${json.days[1].icon}.svg`;
       dayOneConditions.textContent = json.days[1].conditions;
       dayOneDescription.textContent = json.days[1].description;
       dayOne.textContent = json.days[1].datetime;
       dayOneMax.textContent = `${Math.round(json.days[1].feelslikemax)}° F`;
       dayOneMin.textContent = `${Math.round(json.days[1].feelslikemin)}° F`;
 
-      dayTwoIcon.src = `src/icons/${json.days[2].icon}.svg`;
+      dayTwoIcon.src = `icons/${json.days[2].icon}.svg`;
       dayTwoConditions.textContent = json.days[2].conditions;
       dayTwoDescription.textContent = json.days[2].description;
       dayTwo.textContent = json.days[2].datetime;
