@@ -330,12 +330,17 @@ dl[class="forecast"] dt {
     grid-template-columns: minmax(min-content, 1fr);
   }
 
+  input[type="text"] {
+    width: 5rem;
+  }
+
 }
 
 @media screen and (min-width: 720px) {
   figure[class="data"] {
     grid-template-columns: repeat(2, minmax(min-content, 1fr));
   }
+
 }
 
 @media screen and (min-width: 820px) {
