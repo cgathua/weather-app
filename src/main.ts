@@ -44,7 +44,7 @@ async function searchAPI(): Promise<void> {
     const location: string = userInput.value.trim() || 'atlanta';
     const response: Response = await fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${API_KEY}`, { mode: 'cors' });
     if (!response.ok) {
-      throw Error(response.statusText)
+      throw new Error(`HTTP Error! status: ${response.statusText}`)
 
     } else {
       const json = await response.json();
@@ -83,7 +83,7 @@ async function searchAPI(): Promise<void> {
 
     }
   } catch (error) {
-    console.log(error);
+    console.error('Error retreiving weather data:', error);
   } finally {
     form.disabled = false;
     loadingScreen.classList.add('hidden');
